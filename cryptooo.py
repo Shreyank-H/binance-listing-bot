@@ -10,7 +10,7 @@ BINANCE_ANNOUNCEMENT_URL = "https://www.binance.com/en/support/announcement/list
 
 # Telegram Bot Credentials
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+CHAT_ID = '1086859780'
 
 if not TELEGRAM_TOKEN:
     raise ValueError("Missing TELEGRAM_BOT_TOKEN environment variable!")
@@ -18,7 +18,6 @@ if not TELEGRAM_TOKEN:
 # Initialize Telegram bot
 bot = Bot(token=TELEGRAM_TOKEN)
 async def send_startup_message():
-    CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
     await bot.send_message(chat_id=CHAT_ID, text="🚀 Bot is now running! Waiting for new Binance listings...")
 
 asyncio.run(send_startup_message())
