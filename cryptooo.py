@@ -2,6 +2,7 @@ import requests
 import time
 from bs4 import BeautifulSoup
 from telegram import Bot
+import os
 
 # Binance Announcements URL
 BINANCE_ANNOUNCEMENT_URL = "https://www.binance.com/en/support/announcement"
