@@ -18,6 +18,7 @@ if not TELEGRAM_TOKEN:
 # Initialize Telegram bot
 bot = Bot(token=TELEGRAM_TOKEN)
 async def send_startup_message():
+    CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
     await bot.send_message(chat_id=CHAT_ID, text="🚀 Bot is now running! Waiting for new Binance listings...")
 
 asyncio.run(send_startup_message())
