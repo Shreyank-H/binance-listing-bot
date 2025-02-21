@@ -3,6 +3,7 @@ import time
 from bs4 import BeautifulSoup
 from telegram import Bot
 import os
+import asyncio
 
 # Binance Announcements URL
 BINANCE_ANNOUNCEMENT_URL = "https://www.binance.com/en/support/announcement/list/48"
@@ -16,7 +17,11 @@ if not TELEGRAM_TOKEN:
 
 # Initialize Telegram bot
 bot = Bot(token=TELEGRAM_TOKEN)
-bot.send_message(chat_id=CHAT_ID, text="Bot is working!")
+async def send_startup_message():
+    await bot.send_message(chat_id=CHAT_ID, text="🚀 Bot is now running! Waiting for new Binance listings...")
+
+asyncio.run(send_startup_message())
+# bot.send_message(chat_id=CHAT_ID, text="Bot is working!")
 
 def get_latest_listing():
     """Fetch the latest announcement from Binance."""
