@@ -8,15 +8,15 @@ import os
 BINANCE_ANNOUNCEMENT_URL = "https://www.binance.com/en/support/announcement"
 
 # Telegram Bot Credentials
-TELEGRAM_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+TELEGRAM_TOKEN = '7706675741:AAGusazMVZZpMPNC3oNCp58VDDdnmLGRADA'
+CHAT_ID = '1086859780'
 
 if not TELEGRAM_TOKEN:
     raise ValueError("Missing TELEGRAM_BOT_TOKEN environment variable!")
 
 # Initialize Telegram bot
 bot = Bot(token=TELEGRAM_TOKEN)
-bot.send_message(chat_id="YOUR_CHAT_ID", text="Bot is working!")
+bot.send_message(chat_id=CHAT_ID, text="Bot is working!")
 
 def get_latest_listing():
     """Fetch the latest announcement from Binance."""
