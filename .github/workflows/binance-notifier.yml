@@ -21,4 +21,6 @@ jobs:
         run: pip install requests beautifulsoup4 python-telegram-bot
 
       - name: Run bot
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         run: python cryptooo.py
