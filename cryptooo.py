@@ -7,8 +7,8 @@ from telegram import Bot
 BINANCE_ANNOUNCEMENT_URL = "https://www.binance.com/en/support/announcement"
 
 # Telegram Bot Credentials
-TELEGRAM_TOKEN = "7706675741:AAGoJGGUnapN71BIHP1qalxVGqW4PSnoku8"
-CHAT_ID = "1086859780"
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 # Initialize Telegram bot
 bot = Bot(token=TELEGRAM_TOKEN)
